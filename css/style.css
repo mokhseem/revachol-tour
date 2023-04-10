@@ -1,0 +1,165 @@
+@font-face {
+  font-weight: 400;
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Vollkorn-Regular.woff2") format("woff2"),
+    url("../fonts/Vollkorn-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Vollkorn SC";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/VollkornSC-Regular.woff2") format("woff2"),
+    url("../fonts/VollkornSC-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff");
+}
+
+body {
+  min-width: 1600px;
+  margin: 0;
+  color: white;
+  background-color: antiquewhite;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.slide {
+  height: 1000px;
+}
+
+.intro {
+  background-color: hsl(0deg 0% 0% / 20%);
+  background-image: url("../img/city-view.jpg");
+  background-image: -webkit-image-set(url("../img/city-view.webp") 1x);
+  background-image: image-set(
+    url("../img/city-view.webp") type("image/webp"),
+    url("../img/city-view.jpg") type("image/jpeg"));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.intro :where([class^="intro__"]) {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro__wrapper {
+  justify-content: center;
+  height: inherit;
+}
+
+.intro__title {
+  position: relative;
+  align-items: center;
+  font-family: "Vollkorn SC", serif;
+}
+
+.intro__title > * {
+  margin: 0;
+  font-weight: 400;
+}
+
+.intro__title :where(h1) {
+  font-size: 12em;
+  text-shadow: 0 4px 4px hsl(0deg 0% 0% / 25%);
+}
+
+.intro__title :where(p) {
+  position: absolute;
+  bottom: 0;
+  padding: 0 1em;
+  font-size: 2.25em;
+  text-transform: lowercase;
+  background-color: hsl(0deg 0% 0%);
+}
+
+.about {
+  height: 2000px;
+  background-color: hsl(0deg 0% 0% / 10%);
+  background-image: url("../img/village.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-blend-mode: darken;
+}
+
+.kaomoji {
+  font-size: 6em;
+  font-family: "Inter", sans-serif;
+  color: #d65208;
+}
+
+.about > * {
+  display: flex;
+  align-items: center;
+}
+
+.about :where([class$="__info"]) {
+  padding: 3.75em;
+  background-color: hsl(0deg 0% 0% / 80%);
+}
+
+.about :where([class$="__info"] p) {
+  margin: 0;
+  margin-top: 2em;
+  font-size: 1.25em;
+  font-family: "Vollkorn", serif;
+}
+
+.about__crime {
+  column-gap: 2.5em;
+}
+
+.about__rest :where(p) {
+  width: 290px;
+  margin-bottom: 2em;
+}
+
+.rest__info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+}
+
+.rest__info :where(.kaomoji--upper) {
+  margin-left: 3rem;
+}
+
+.rest__info :where(.kaomoji--lower) {
+  align-self: flex-end;
+  margin-left: 2rem;
+}
+
+.rest__info :where(div) {
+  display: flex;
+}
+
+.rest__image {
+  position: absolute;
+  top: 15%;
+  left: 400px;
+  z-index: -1;
+}
+
+.quotes {
+  background: no-repeat url("../img/happiness.jpg");
+  background-size: cover;
+}
