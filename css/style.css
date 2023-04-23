@@ -1,10 +1,7 @@
-@font-face {
-  font-weight: 400;
-  font-family: "Vollkorn";
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/Vollkorn-Regular.woff2") format("woff2"),
-    url("../fonts/Vollkorn-Regular.woff") format("woff");
+:root {
+  --viewport-height: calc(var(--vh, 1vh) * 100);
+  --font-display-size: 10.75em;
+  --color-black: 0deg 0% 0%;
 }
 
 @font-face {
@@ -16,33 +13,25 @@
     url("../fonts/VollkornSC-Regular.woff") format("woff");
 }
 
-@font-face {
-  font-weight: 400;
-  font-family: "Inter";
-  font-style: normal;
-  font-display: swap;
-  src: url("../fonts/Inter-Regular.woff2") format("woff2"),
-    url("../fonts/Inter-Regular.woff") format("woff");
-}
-
 body {
-  min-width: 1600px;
+  min-width: 1440px;
   margin: 0;
   color: white;
   background-color: antiquewhite;
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1045px;
   margin: 0 auto;
 }
 
 .slide {
-  height: 1000px;
+  height: 100vh;
+  height: var(--viewport-height);
 }
 
 .intro {
-  background-color: hsl(0deg 0% 0% / 20%);
+  background-color: hsl(var(--color-black) / 20%);
   background-image: url("../img/city-view.jpg");
   background-image: -webkit-image-set(url("../img/city-view.webp") 1x);
   background-image: image-set(
@@ -76,22 +65,23 @@ body {
 }
 
 .intro__title :where(h1) {
-  font-size: 12em;
-  text-shadow: 0 4px 4px hsl(0deg 0% 0% / 25%);
+  font-size: var(--font-display-size);
+  text-shadow: 0 4px 4px hsl(var(--color-black) / 25%);
 }
 
 .intro__title :where(p) {
   position: absolute;
   bottom: 0;
   padding: 0 1em;
-  font-size: 2.25em;
+  font-size: 2em;
   text-transform: lowercase;
-  background-color: hsl(0deg 0% 0%);
+  background-color: hsl(var(--color-black));
 }
 
 .about {
-  height: 2000px;
-  background-color: hsl(0deg 0% 0% / 10%);
+  height: calc(100vh * 2);
+  height: calc(var(--viewport-height) * 2);
+  background-color: hsl(var(--color-black) / 10%);
   background-image: url("../img/village.png");
   background-repeat: no-repeat;
   background-position: bottom;
@@ -100,8 +90,8 @@ body {
 }
 
 .kaomoji {
-  font-size: 6em;
-  font-family: "Inter", sans-serif;
+  font-size: calc(var(--font-display-size) / 2);
+  font-family: "Helvetica", "Arial", sans-serif;
   color: #d65208;
 }
 
@@ -111,15 +101,17 @@ body {
 }
 
 .about :where([class$="__info"]) {
-  padding: 3.75em;
-  background-color: hsl(0deg 0% 0% / 80%);
+  padding: 3.25em;
+  background-color: hsl(var(--color-black) / 80%);
 }
 
 .about :where([class$="__info"] p) {
   margin: 0;
   margin-top: 2em;
-  font-size: 1.25em;
-  font-family: "Vollkorn", serif;
+  font-size: 18px;
+  line-height: 1.3;
+  font-family: "Baskerville", serif;
+  letter-spacing: 0.3px;
 }
 
 .about__crime {
@@ -127,7 +119,7 @@ body {
 }
 
 .about__rest :where(p) {
-  width: 290px;
+  width: 260px;
   margin-bottom: 2em;
 }
 
@@ -140,7 +132,7 @@ body {
 }
 
 .rest__info :where(.kaomoji--upper) {
-  margin-left: 3rem;
+  margin-left: 2.75rem;
 }
 
 .rest__info :where(.kaomoji--lower) {
@@ -154,8 +146,8 @@ body {
 
 .rest__image {
   position: absolute;
-  top: 15%;
-  left: 400px;
+  top: 13.3%;
+  left: 360px;
   z-index: -1;
 }
 
@@ -163,3 +155,4 @@ body {
   background: no-repeat url("../img/happiness.jpg");
   background-size: cover;
 }
+
